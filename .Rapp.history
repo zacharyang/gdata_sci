@@ -1,0 +1,279 @@
+setwd('/users/zachang/data_sci/moe')#
+## Read in data ## #
+attendance_records= read.csv('attendance_records_20160324.csv')#
+demo_info=read.csv('demographic_info_20160324.csv')#
+psle_grade_range=read.csv('PSLE Grade Score Range.csv')#
+results=data.frame(read.csv('results_info_20160324.csv'))#
+#
+print(c(nrow(demo_info),nrow(results),nrow(attendance_records)))
+summary(attendance_records)
+master_df=merge(demo_info,results,by="NRIC")#
+colnames(master_df)[2]='School'#
+colnames(master_df)[3]='Programme'#
+master_df=subset(master_df,select=-c(School.y,Programme.y))
+summary(master_df)
+progbyresults=table(Programme,PSLE_Result)#
+barplot(progbyresults,legend=rownames(progbyresults))#
+which(X2014_Result>X2015_Result)#
+master_df$A2014_Result=master_df$A2015_Result=NA
+attach(master_df)#
+summary(master_df)#
+progbyresults=table(Programme,PSLE_Result)
+barplot(progbyresults,legend=rownames(progbyresults))
+master_df$A2014_Result=master_df$A2015_Result=NA
+master_df$PSLE_Result_num = NA
+PSLE_Result=='A'
+master_df$PSLE_Result[PSLE_Result=='A*']=7
+master_df$PSLE_Result[PSLE_Result=='A*']
+master_df$PSLE_Result
+master_df$PSLE_Result[PSLE_Result=='A*'] = as.factor(7)
+master_df=merge(demo_info,results,by="NRIC")#
+colnames(master_df)[2]='School'#
+colnames(master_df)[3]='Programme'#
+master_df=subset(master_df,select=-c(School.y,Programme.y))
+detach(master_df)
+attach(master_df)#
+summary(master_df)#
+progbyresults=table(Programme,PSLE_Result)#
+barplot(progbyresults,legend=rownames(progbyresults))#
+master_df$A2014_Result=master_df$A2015_Result=NA
+master_df$PSLE_Result_num[PSLE_Result=='A*'] = 7
+master_df$PSLE_Result_num
+psle_grade_range
+aster_df$PSLE_Result_num[PSLE_Result=='A*'] = 7#
+master_df$PSLE_Result_num[PSLE_Result=='A'] = 6#
+master_df$PSLE_Result_num[PSLE_Result=='B'] = 5#
+master_df$PSLE_Result_num[PSLE_Result=='C'] = 4#
+master_df$PSLE_Result_num[PSLE_Result=='D'] = 3#
+master_df$PSLE_Result_num[PSLE_Result=='E'] = 2#
+master_df$PSLE_Result_num[PSLE_Result=='U'] = 1
+master_df$PSLE_Result_num
+as.factor(master_df$PSLE_Result_num)
+PSLE_Result_num
+masterdf$A2014_Result[X2014_Result<50 & X2014_Result>=35]= 3#
+masterdf$A2014_Result[X2014_Result<35 & X2014_Result>=20]= 2#
+masterdf$A2014_Result[X2014_Result<20]= 1
+master_df$A2014_Result[X2014_Result<50 & X2014_Result>=35]= 3#
+master_df$A2014_Result[X2014_Result<35 & X2014_Result>=20]= 2#
+master_df$A2014_Result[X2014_Result<20]= 1
+master_df$A2014_Result
+length(master_df$A2014_Result)
+master_df$A2014_Result= as.factor(master_df$A2014_Result)
+master_df$A2014_Result>master_df$PSLE_Result_num
+master_df$PSLE_Result_num = NA#
+master_df$PSLE_Result_num[PSLE_Result=='A*'] = 7#
+master_df$PSLE_Result_num[PSLE_Result=='A'] = 6#
+master_df$PSLE_Result_num[PSLE_Result=='B'] = 5#
+master_df$PSLE_Result_num[PSLE_Result=='C'] = 4#
+master_df$PSLE_Result_num[PSLE_Result=='D'] = 3#
+master_df$PSLE_Result_num[PSLE_Result=='E'] = 2#
+master_df$PSLE_Result_num[PSLE_Result=='U'] = 1
+master_df$A2014_Result=master_df$A2015_Result=NA#
+#
+master_df$A2014_Result[X2014_Result<50 & X2014_Result>=35]= 3#
+master_df$A2014_Result[X2014_Result<35 & X2014_Result>=20]= 2#
+master_df$A2014_Result[X2014_Result<20]= 1
+master_df$A2014_Result>master_df$PSLE_Result_num
+master_df$A2015_Result[X2015_Result<90 & X2015_Result>=75]= 6#
+master_df$A2015_Result[X2015_Result<75 & X2015_Result>=60]= 5#
+master_df$A2015_Result[X2015_Result<60 & X2015_Result>=50]= 4#
+master_df$A2015_Result[X2015_Result<50 & X2015_Result>=35]= 3#
+master_df$A2015_Result[X2015_Result<35 & X2015_Result>=20]= 2#
+master_df$A2015_Result[X2015_Result<20]= 1
+master_df$A2015_Result
+A2015_Result
+X2015_Result
+is.na(X2015_Result)
+sum(is.na(X2015_Result))
+sum(is.na(master_df$A2015_Result))
+is.na(PSLE_Result)
+sum(is.na(PSLE_Result))
+which(PSLE_Result==NA)
+which(PSLE_Result=='NA')
+which(PSLE_Result='NA')
+which(is.na(PSLE_Result))
+which(is.na(X2014_Result))
+which(is.na(X2015_Result))
+mydata = read.dta("http://dss.princeton.edu/training/Panel101.dta")
+library(foreign)
+mydata = read.dta("http://dss.princeton.edu/training/Panel101.dta")
+summary(mydata)
+summary(master_df)
+?table
+detach(master_df)
+attach(master_df)
+table(A2015_Result,PSLE_Result_num)
+table(A2015_Result,PSLE_Result_num,Programme)
+cor(A2015_Result,PSLE_Result_num)
+require(stats)#
+require(fields)#
+require(akima)
+library(akima)
+require(stats)#
+require(fields)#
+require(akima)
+library(spam)
+heatmap(table(A2015_Result,PSLE_Result_num))
+library(ggplot2)
+?melt
+?heatmap
+heatmap(as.matrix(table(A2015_Result,PSLE_Result_num)))
+require(graphics); require(grDevices)#
+x  <- as.matrix(mtcars)#
+rc <- rainbow(nrow(x), start = 0, end = .3)#
+cc <- rainbow(ncol(x), start = 0, end = .3)#
+hv <- heatmap(x, col = cm.colors(256), scale = "column",#
+              RowSideColors = rc, ColSideColors = cc, margins = c(5,10),#
+              xlab = "specification variables", ylab =  "Car Models",#
+              main = "heatmap(<Mtcars data>, ..., scale = \"column\")")
+rc
+heatmap(as.matrix(table(A2015_Result,PSLE_Result_num)),scale="column")
+heatmap(as.matrix(table(A2015_Result,PSLE_Result_num)),scale="column",symm=TRUE)
+m=table(A2015_Result,PSLE_Result_num)
+ggplot(m,aes(A2015_Result,PSLE_Result_num)+geom_tile())
+ggplot(m,aes(A2015_Result,PSLE_Result_num)+geom_tile(aes(A2015_Result)))
+ggplot(m,aes(A2015_Result,PSLE_Result_num)+geom_tile(colour="white" + scale_fill_gradient(low="white",high="steelblue")))
+nba <- read.csv("http://datasets.flowingdata.com/ppg2008.csv")
+summary(nba)
+nba$Name <- with(nba, reorder(Name, PTS))
+nba.m <- melt(nba)
+library(reshape2)
+nba.m <- melt(nba)
+nba.m
+summary(nba.m)
+melt(table(PSLE_Result_num,A2015_Result))
+nba.m <- ddply(nba.m, .(variable), transform,#
++     rescale = rescale(value))
+nba.m <- ddply(nba.m, .(variable), transform, rescale = rescale(value))
+library(plyr)
+nba.m <- ddply(nba.m, .(variable), transform, rescale = rescale(value))
+?aes
+m
+m=melt(table(A2015_Result,PSLE_Result_num))
+m
+m$value
+ggplot(m,aes(m$A2015_Result,m$PSLE_Result_num)+geom_tile(aes(fill=m$value), colour="white" + scale_fill_gradient(low="white",high="steelblue")))
+ggplot(m,aes(m$A2015_Result,m$PSLE_Result_num)+geom_tile(aes(fill=m$value, colour="white") + scale_fill_gradient(low="white",high="steelblue")))
+ggplot(m,aes(m$A2015_Result,m$PSLE_Result_num)+geom_tile(aes(fill=m$value, colour="white") + scale_fill_gradient()))
+ggplot(m,aes(m$A2015_Result,m$PSLE_Result_num)+geom_tile(aes(fill=m$value, colour="white") ))
+p<-ggplot(m,aes(m$A2015_Result,m$PSLE_Result_num)+geom_tile(aes(fill=m$value, colour="white") + scale_fill_gradient(low="white",high="steelblue")))
+m=data.matrix(A2015_Result,PSLE_Result_num)
+heatmap(as.matrix(table(A2015_Result,PSLE_Result_num)),scale="column",cm.colors(256),margins=c(5,10))
+heatmap(m,col = heat.colors(256),scale="column")
+heatmap(m,col=heat.colors(256),scale="column",margins=c(5,5))
+m
+m=data.matrix(cbind(A2015_Result,PSLE_Result_num))
+heatmap(m,col=heat.colors(256),scale="column",margins=c(5,5))
+m
+heatmap(m,col=heat.colors(256),scale="row",margins=c(5,5))
+heatmap(as.matrix(table(A2015_Result,PSLE_Result_num)),col=heat.colors(256),scale="column",margins=c(5,5))
+m=melt(table(A2015_Result,PSLE_Result_num))
+m
+p<-ggplot(data=m aes(x=A2015_Result,y=PSLE_Result_num,fill=value)+geom_tile())
+p<-ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value)+geom_tile())
+p<-ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value))+geom_tile())
+pggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value))+geom_tile()
+ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value))+geom_tile()
+ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num))+geom_tile(aes(fill=value),colour="white"+ scale_fill_gradient(low="white",high="steelblue"))
+ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value))+geom_tile()
+ggplot(data=m,aes(x=A2015_Result,y=PSLE_Result_num,fill=value))+geom_tile()+scale_fill_gradient(low="white",high="steelblue")
+master_df$improv_grade=master_df$PSLE_Result_num>master_df$A2015_Result
+master_df$improv_grade
+summary(master_df)
+mfit1<-glm(improve_grade~ School+Programme+Gender+PCHI+Flat_Type,family=binomial(),data=master_df)
+mfit1<-glm(improv_grade~ School+Programme+Gender+PCHI+Flat_Type,family=binomial(),data=master_df)
+summary(mfit1)
+mfit1<-glm(PSLE_Result_num~ School+Programme+Gender+PCHI+Flat_Type,data=master_df)
+summary(mfit1)
+master_df$improv_maintain_grade=master_df$PSLE_Result_num>=master_df$A2015_Result
+master_df$improv_maintain_grade=master_df$PSLE_Result_num>=master_df$A2015_Result
+mfit2<-glm(improv_maintain_grade~ School+Programme+Gender+PCHI+Flat_Type,data=master_df)
+summary(mfit2)
+mfit3<-glm(improv_maintain_grade~ School+Programme+Gender+PCHI+Flat_Type,family=binomial(),data=master_df)
+summary(mfit3)
+summary(master_df$improv_maintain_grade)
+summary(attendance_records)
+attendance_records[+,]
+rowSums(attendance_records[,4:])
+attendance_records[,4:]
+attendance_records[,1]
+attendance_records[,4:
+]
+attendance_records[,4:24]
+attendance_records[,4:23]
+rowSums(attendance_records[,4:23])
+attendance_records[,4:23]>0
+is.null(attendance_records[,4:23])
+attendance_records[,4:23]>0
+as.numeric(attendance_records[,4:23])
+is.null(attendance_records[3,4])
+is.null(attendance_records[3,5)
+is.null(attendance_records[3,5])
+attendance_records.count()
+!is.null(attendance_records)
+rowSums(!is.na(attendance_records[,4:23]))
+length(rowSums(!is.na(attendance_records[,4:23])))
+length(rowSums(!is.null(attendance_records[,4:23])))
+attendance_records[3:4]
+attendance_records[3,4]
+as.logical(attendance_records[3,4])
+as.logical(attendance_records[:4,23])
+as.logical(attendance_records[,4:23])
+?apply
+apply(attendance_records[,4:23],1,sum)
+apply(attendance_records[,4:23],1,count)
+x<-apply(attendance_records[,4:23],1,count)
+x$1
+x[[1]]
+x[[1]][2]
+x[[1]][18]
+x[[1]][1]
+x[[1]][2]
+x[[1]][2][1]
+?apply
+?count
+x<-apply(attendance_records[,4:23],1,count(vars=P))
+x<-apply(attendance_records[,4:23],1,rowSums)
+x<-apply(attendance_records[,4:23],1,count)
+names(x)
+x[1]
+x[1][2]
+x[1]$2
+x[1][P]
+x[[1]][P]
+as.numeric(x[1])
+names(x)
+unlist(x)
+?tapply
+?match
+match(c(P),attendance_records[,4:23])
+table(attendance_records[,4:34])
+table(attendance_records[,4:23])
+which(attendance_records[,4:23])=='P'
+attendance_records[,4:23]=='P'
+rowSums(attendance_records[,4:23]=='P')
+?subset
+excel_df=subset(master_df, Programme="EXCEL")
+summary(excel_df)
+summary(attendance_records)
+attendance_records$total_sessions=rowSums(attendance_records[,4:23]=='P')
+summary(attendance_records)
+rbind(attendance_records$total_sessions,attendance_records$NRIC)
+excel_attendance=subset(attendance_records,select=c(NRIC,total_sessions))
+summary(excel_attendance)
+summary(excel_df)
+nrow(excel_df)-nrow(excel_attendance)
+?subset
+excel_df=subset(master_df, Programme=="EXCEL")
+summary(excel_df)
+nrow(excel_df)-nrow(excel_attendance)
+excel_new_df=merge(excel_df,excel_attendance,by="NRIC")
+summary(excel_new_df)
+mfit3<-glm(improv_grade~School+Programme+Gender+PCHI+Flat_Type+total_sessions,family=binomial(),data=excel_new_df)
+mfit3<-glm(improv_grade~School+Programme+Gender+PCHI+Flat_Type+total_sessions,family=binomial(),data=excel_new_df)
+excel_new_df$total_sessions
+mfit3<-glm(improv_grade~School+Gender+PCHI+Flat_Type+total_sessions,family=binomial(),data=excel_new_df)
+summary(mfit3)
+psle_grade_range=read.csv('https://github.com/zacharyang/gdata_sci/blob/master/PSLE%20Grade%20Score%20Range.csv')
+psle_grade_range
+psle_grade_range=read.csv('https://raw.githubusercontent.com/zacharyang/gdata_sci/master/PSLE%20Grade%20Score%20Range.csv')
